@@ -13,38 +13,11 @@ Files
 
 data/: Contains Olympic historical datasets spanning 1896-2020
 
-olympic_records.csv: Performance records across track & field, swimming, and gymnastics
-athlete_demographics.csv: Age, nationality, and medal data for all Olympic medalists
-cultural_indices.csv: Hofstede's Individualism Index scores correlated with GDP and population
-
-
 visuals/: Includes all generated visualization images used in the analysis
-
-gender_participation.png: Historical trends in male vs. female Olympic participation rates
-performance_saturation_100m.png: Asymptotic modeling of 100m sprint records showing biological limit convergence
-performance_saturation_swimming.png: Swimming performance trends demonstrating saturation effects
-individualism_medals.png: Correlation between cultural individualism scores and medal counts
-mean_age_trend_graph.png: Evolution of average athlete age across three historical eras (1900-2020)
-olimpiyat_1.jpeg, Olimpiyat2.jpeg: Background images for hero and section designs
-
 
 scripts/: Python scripts for data analysis, statistical modeling, and visualization generation
 
-data_preprocessing.py: Cleans and prepares Olympic datasets for analysis
-performance_modeling.py: Implements OLS log-linear regression and Extreme Value Theory (EVT) models
-saturation_analysis.py: Calculates Performance Saturation Index (PSI) and detects asymptotic limits
-cultural_correlation.py: Analyzes Hofstede scores against medal counts with GDP/population controls
-visualization_generator.py: Creates all charts and graphs used in the final presentation
-age_breakpoint_detection.py: Performs Chow tests and structural break analysis on athlete age distributions
-
-
 index.html: Main interactive webpage for GitHub Pages hosting, featuring:
-
-Responsive design with smooth scrolling navigation
-Three research questions with data visualizations
-Methodology and conclusion sections
-Animated transitions and parallax effects
-
 
 
 Host: https://bilgi-ie-421.github.io/ie421-2025-2026-1-termproject-drop-database/
