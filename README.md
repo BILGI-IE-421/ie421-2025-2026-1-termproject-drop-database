@@ -1,4 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/PlHXFZE7)
 IE 421 - Data Science for Engineers Term Project 'The Asymptote of Olympic Glory'
 
 This repository presents a comprehensive data science analysis exploring the biological and cultural limits of human athletic performance through 120 years of Olympic history (1896-2020). Using advanced statistical modeling and extreme value theory, we investigate whether humanity is approaching the mathematical ceiling of physical achievement, and examine the cultural factors that determine Olympic dominance in this era of converging performance.
