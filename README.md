@@ -4,15 +4,11 @@ This repository presents a comprehensive data science analysis exploring the bio
 The project reveals that human performance has reached approximately 99% of biological capacity across major Olympic sports, with future improvements measured in millimeters and milliseconds rather than breakthrough achievements. Through regression analysis, performance saturation indices, and cultural correlation studies, we demonstrate how the Olympics have transitioned from an era of human expansion to one of human convergence—approaching the asymptote of what is physically possible.
 
 Term: 2025-2026 Fall Semester
-ID / NAME
-121203076 -- Yiğit Şamil Ercedoğan
-122203053 -- Batuhan Sarı
-122203016 -- İlhan Uysal
-120203025 -- Ali Baran Turan
-121203041 -- Efe Odabaşı
+
+NAME: Ali Baran Turan -- Batuhan Sarı -- Efe Odabaşı -- İlhan Uysal -- Yiğit Şamil Ercedoğan
+ID:         120203025 --    122203053 --   121203041 --   122203016 --             121203076  
 
 Files
-Data Files
 
 data/: Contains Olympic historical datasets spanning 1896-2020
 
@@ -20,9 +16,6 @@ olympic_records.csv: Performance records across track & field, swimming, and gym
 athlete_demographics.csv: Age, nationality, and medal data for all Olympic medalists
 cultural_indices.csv: Hofstede's Individualism Index scores correlated with GDP and population
 
-
-
-Visualizations
 
 visuals/: Includes all generated visualization images used in the analysis
 
@@ -34,9 +27,6 @@ mean_age_trend_graph.png: Evolution of average athlete age across three historic
 olimpiyat_1.jpeg, Olimpiyat2.jpeg: Background images for hero and section designs
 
 
-
-Scripts
-
 scripts/: Python scripts for data analysis, statistical modeling, and visualization generation
 
 data_preprocessing.py: Cleans and prepares Olympic datasets for analysis
@@ -46,9 +36,6 @@ cultural_correlation.py: Analyzes Hofstede scores against medal counts with GDP/
 visualization_generator.py: Creates all charts and graphs used in the final presentation
 age_breakpoint_detection.py: Performs Chow tests and structural break analysis on athlete age distributions
 
-
-
-Web Interface
 
 index.html: Main interactive webpage for GitHub Pages hosting, featuring:
 
