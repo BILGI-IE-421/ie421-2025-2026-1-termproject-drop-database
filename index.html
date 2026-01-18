@@ -309,17 +309,19 @@
             border-width: 5px;  /* Renk körü erişilebilirliği için */
         }
 
-        /* Only for the R² card */
-        .stat-number--r2{
-            white-space: nowrap;
-            font-size: clamp(2.2rem, 3vw, 3.2rem);  /* auto fits */
-            letter-spacing: 0.5px;
+        .stat-number {
+            font-size: 3.5rem;
+             font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            white-space: nowrap;          /* ✅ keeps it on one row */
         }
 
-        .stat-number--r2 sup{
-            font-size: 0.55em;
-        vertical-align: super;
-    }
+.stat-number sup {
+    font-size: 0.55em;            /* ✅ nice R² size */
+    vertical-align: super;
+}
 
         .stat-label {
             font-size: 1.1rem;
@@ -697,8 +699,9 @@
                 <div class="stat-label">High Jump<br>Biological Limit Achieved</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number stat-number--r2">R<sup>2</sup> = 0.93</div>
+                <div class="stat-number">R² = 0.93</div>
                 <div class="stat-label">Marathon Model<br>Statistical Fit Quality</div>
+            </div>
         </div>
 
         <div class="story-block">
@@ -756,7 +759,7 @@
             </table>
             
             <div class="pull-quote">
-                <p>The conclusion is a <strong>quantitative proof</strong> . Humanity has already reached <strong>~99% of biological capacity</strong>.</p>
+                <p>The conclusion is a <strong>quantitative proof</strong>. Humanity has already reached <strong>~99% of biological capacity</strong>.</p>
             </div>
         </div>
     </section>
