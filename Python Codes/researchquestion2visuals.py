@@ -73,13 +73,15 @@ def generate_charts():
 
     print("Generating Interactive Dashboard...")
 
-    df['Medals_Log_Safe'] = df['Total_Medals'].apply(lambda x: x if x > 0 else 0.1)
-
+    # FIX: Daha iyi log scale handling
+    df_filtered = df[df['Total_Medals'] > 0].copy()
+    
     brush = alt.selection_interval()
 
-    scatter = alt.Chart(df).mark_circle(size=100, opacity=0.7).encode(
-        x=alt.X('idv:Q', title='Individualism Score (0-100)'),
-        y=alt.Y('Medals_Log_Safe:Q', title='Total Olympic Medals (Log Scale)', scale=alt.Scale(type='log')), 
+    # FIX: Normal scale kullan, log scale yerine - daha görünür olacak
+    scatter = alt.Chart(df_filtered).mark_circle(size=120, opacity=0.75).encode(
+        x=alt.X('idv:Q', title='Individualism Score (0-100)', scale=alt.Scale(domain=[0, 100])),
+        y=alt.Y('Total_Medals:Q', title='Total Olympic Medals', scale=alt.Scale(type='sqrt')),  # sqrt scale daha iyi
         color=alt.condition(
             brush,
             alt.Color('idv:Q', scale=alt.Scale(scheme='blues'), legend=None),
@@ -92,25 +94,25 @@ def generate_charts():
         ]
     ).properties(
         title='1. EXPLORE: Select an area to filter nations',
-        width=400,
+        width=450,
         height=400
     ).add_selection(
         brush
     )
 
-    
+    # Regression line
     reg_line = scatter.transform_regression(
-        'idv', 'Medals_Log_Safe'
-    ).mark_line(color='#d62728', strokeDash=[5, 5])
+        'idv', 'Total_Medals', method='poly', order=1
+    ).mark_line(color='#d62728', strokeWidth=3, strokeDash=[5, 5])
 
     left_panel = scatter + reg_line
 
-    
-    bars = alt.Chart(df).mark_bar().encode(
+    # Bar chart
+    bars = alt.Chart(df_filtered).mark_bar().encode(
         y=alt.Y(f'{country_col}:N', sort='-x', title=None),
         x=alt.X('Total_Medals:Q', title='Total Medals'),
         color=alt.Color('idv:Q', scale=alt.Scale(scheme='blues'), legend=None),
-        tooltip=[f'{country_col}:N', 'Total_Medals:Q']
+        tooltip=[f'{country_col}:N', 'Total_Medals:Q', 'idv:Q']
     ).transform_filter(
         brush 
     ).transform_window(
@@ -120,7 +122,7 @@ def generate_charts():
         alt.datum.rank <= 15 
     ).properties(
         title='2. DETAILS: Top Nations in Selection',
-        width=300,
+        width=350,
         height=400
     )
 
@@ -128,6 +130,8 @@ def generate_charts():
         title='Interactive Cultural Analysis: Filter by Individualism'
     ).configure_view(
         strokeWidth=0
+    ).configure_axis(
+        gridOpacity=0.3
     )
 
     dashboard.save('visual_interactive_dashboard.json')
