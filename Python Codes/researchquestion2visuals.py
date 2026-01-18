@@ -3,13 +3,27 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import altair as alt
 import warnings
+import os
+import sys
 
 warnings.filterwarnings('ignore')
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+DATA_DIR = os.path.join(PROJECT_ROOT, 'processed data')
+
+def get_data_path(filename):
+    """Data dosyasının yolunu döndür"""
+    if os.path.exists(filename):
+        return filename
+    data_path = os.path.join(DATA_DIR, filename)
+    if os.path.exists(data_path):
+        return data_path
+    raise FileNotFoundError(f"Data file not found: {filename}")
 
 def generate_charts():
     print("Loading data...")
     try:
-        df = pd.read_csv('medals_hofstede_merged.csv')
+        df = pd.read_csv(get_data_path('medals_hofstede_merged.csv'))
     except FileNotFoundError:
         print("Error: 'medals_hofstede_merged.csv' not found.")
         return

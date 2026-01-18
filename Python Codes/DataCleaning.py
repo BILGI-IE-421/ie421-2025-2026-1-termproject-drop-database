@@ -3,7 +3,21 @@ import numpy as np
 import re
 import os
 import warnings
+import sys
 
+# Proje yapısına göre data klasörünü bul
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+DATA_DIR = os.path.join(PROJECT_ROOT, 'data')
+
+def get_data_path(filename):
+    """Data dosyasının yolunu döndür"""
+    if os.path.exists(filename):
+        return filename
+    data_path = os.path.join(DATA_DIR, filename)
+    if os.path.exists(data_path):
+        return data_path
+    raise FileNotFoundError(f"Data file not found: {filename}")
 
 warnings.filterwarnings("ignore", category=UserWarning) 
 
@@ -15,11 +29,11 @@ def load_data():
     print("Veriler yükleniyor...")
     try:
         data = {
-            'meter_100': pd.read_csv('100meter.csv'),
-            'marathon': pd.read_csv('maraton11.csv'),
-            'highjump': pd.read_excel('highjump.xlsx'),
-            'athlete_events': pd.read_csv('processed_athlete_events.csv'),
-            'hofstede': pd.read_excel('temizlenmis_hofstede_data.xlsx')
+            'meter_100': pd.read_csv(get_data_path('100meter.csv')),
+            'marathon': pd.read_csv(get_data_path('maraton11.csv')),
+            'highjump': pd.read_excel(get_data_path('highjump.xlsx')),
+            'athlete_events': pd.read_csv(get_data_path('processed_athlete_events.csv')),
+            'hofstede': pd.read_excel(get_data_path('temizlenmis_hofstede_data.xlsx'))
         }
         print("Tüm veriler başarıyla okundu.\n")
         return data

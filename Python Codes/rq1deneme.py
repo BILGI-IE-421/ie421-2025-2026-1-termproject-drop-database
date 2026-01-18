@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
 import warnings
+import os
+import sys
 
 
 warnings.filterwarnings('ignore')
@@ -25,12 +27,26 @@ def fit_ols_logarithmic(years, values, mode='min'):
     pred_2040 = intercept + slope * future_log
     
     return y_pred, r2, slope, intercept, pred_2040
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+DATA_DIR = os.path.join(PROJECT_ROOT, 'processed data')
+
+def get_data_path(filename):
+    """Data dosyasının yolunu döndür"""
+    if os.path.exists(filename):
+        return filename
+    data_path = os.path.join(DATA_DIR, filename)
+    if os.path.exists(data_path):
+        return data_path
+    raise FileNotFoundError(f"Data file not found: {filename}")
 def analyze_with_ols():    
+    
 
     try:
-        sprint = pd.read_csv('100m_cleaned.csv')
-        marathon = pd.read_csv('marathon_cleaned.csv')
-        highjump = pd.read_csv('highjump_cleaned.csv')
+        sprint = pd.read_csv(get_data_path('100m_cleaned.csv'))
+        marathon = pd.read_csv(get_data_path('marathon_cleaned.csv'))
+        highjump = pd.read_csv(get_data_path('highjump_cleaned.csv'))
     except FileNotFoundError:
         print("HATA: Dosyalar bulunamadı.")
         return
@@ -94,13 +110,13 @@ def analyze_with_ols():
 
 
     plt.title('OLS Log-Linear Regression:Performance Improvements', fontsize=14, pad=15)
-    plt.xlabel('Yıl', fontsize=12)
+    plt.xlabel('Year', fontsize=12)
     plt.ylabel('Performans Index (Starting = 100)', fontsize=12)
     plt.legend(fontsize=11)
     plt.grid(True, linestyle='--', alpha=0.5)
     
 
-    plt.text(0.02, 0.05,
+    plt.text(0.02, 0.05,'Logarithmic Model\nDiminishing Returns Visible',
              transform=plt.gca().transAxes, fontsize=9,
              bbox=dict(facecolor='white', alpha=0.8, edgecolor='gray'))
 

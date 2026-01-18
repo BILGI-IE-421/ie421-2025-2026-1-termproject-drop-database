@@ -1,9 +1,24 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+import sys
 
+# Proje yapısına göre data klasörünü bul
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+DATA_DIR = os.path.join(PROJECT_ROOT, 'data')
 
-id_age_year = pd.read_csv("athlete_events.csv")
+def get_data_path(filename):
+    """Data dosyasının yolunu döndür"""
+    if os.path.exists(filename):
+        return filename
+    data_path = os.path.join(DATA_DIR, filename)
+    if os.path.exists(data_path):
+        return data_path
+    raise FileNotFoundError(f"Data file not found: {filename}")
+
+id_age_year = pd.read_csv(get_data_path("athlete_events.csv"))
 
 
 id_age_year["Age"] = pd.to_numeric(id_age_year["Age"], errors="coerce")
