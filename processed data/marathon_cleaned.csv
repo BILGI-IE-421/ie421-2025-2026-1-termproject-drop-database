@@ -1,0 +1,44 @@
+Time,Athlete,Nationality,Date,Notes,Time_seconds,Year
+02:55:18,Johnny Hayes,USA,24/07/1908,Early Era,10518.0,1908
+02:52:45,Robert Fowler,USA,01/01/1909,Early Era,10365.0,1909
+02:46:52,James Clark,USA,12/02/1909,Early Era,10012.0,1909
+02:46:04,Albert Raines,USA,08/05/1909,Early Era,9964.0,1909
+02:42:31,Henry Barrett,GBR,26/05/1909,Early Era,9751.0,1909
+02:40:34,Thure Johansson,SWE,31/08/1909,Early Era,9634.0,1909
+02:38:16,Harry Green,GBR,12/05/1913,Early Era,9496.0,1913
+02:36:06,Alexis Ahlgren,SWE,31/05/1913,Early Era,9366.0,1913
+02:32:35,Hannes Kolehmainen,FIN,22/08/1920,Valid,9155.0,1920
+02:29:01,Albert Michelsen,USA,12/10/1925,Valid,8941.0,1925
+02:27:49,Fusashige Suzuki,JPN,31/03/1935,Valid,8869.0,1935
+02:26:42,Sohn Kee-chung,JPN,03/11/1935,Valid (Korean athlete under Japan),8802.0,1935
+02:26:07,Suh Yun-bok,KOR,19/04/1947,Valid,8767.0,1947
+02:25:39,Suh Yun-bok,KOR,19/04/1947,Valid,8739.0,1947
+02:20:43,Jim Peters,GBR,14/06/1952,Valid,8443.0,1952
+02:18:40,Jim Peters,GBR,13/06/1953,Valid,8320.0,1953
+02:18:34,Jim Peters,GBR,04/10/1953,Valid,8314.0,1953
+02:17:39,Jim Peters,GBR,26/06/1954,Valid,8259.0,1954
+02:15:17,Sergey Popov,URS,24/08/1958,Valid,8117.0,1958
+02:15:16,Abebe Bikila,ETH,10/09/1960,Valid (Barefoot),8116.0,1960
+02:15:15,Toru Terasawa,JPN,17/02/1963,Valid,8115.0,1963
+02:14:28,Buddy Edelen,USA,15/06/1963,Valid,8068.0,1963
+02:13:55,Basil Heatley,GBR,13/06/1964,Valid,8035.0,1964
+02:12:11,Abebe Bikila,ETH,21/10/1964,Valid,7931.0,1964
+02:12:00,Morio Shigematsu,JPN,12/06/1965,Valid,7920.0,1965
+02:09:36,Derek Clayton,AUS,03/12/1967,Valid,7776.0,1967
+02:08:33,Derek Clayton,AUS,30/05/1969,Valid,7713.0,1969
+02:08:18,Robert de Castella,AUS,06/12/1981,Valid,7698.0,1981
+02:08:05,Steve Jones,GBR,21/10/1984,Valid,7685.0,1984
+02:07:12,Carlos Lopes,POR,20/04/1985,Valid,7632.0,1985
+02:06:50,Belayneh Dinsamo,ETH,17/04/1988,Valid,7610.0,1988
+02:06:05,Ronaldo da Costa,BRA,20/09/1998,Valid,7565.0,1998
+02:05:42,Khalid Khannouchi,MAR,24/10/1999,Valid,7542.0,1999
+02:05:38,Khalid Khannouchi,USA,14/04/2002,Valid,7538.0,2002
+02:04:55,Paul Tergat,KEN,28/09/2003,Valid,7495.0,2003
+02:04:26,Haile Gebrselassie,ETH,30/09/2007,Valid,7466.0,2007
+02:03:59,Haile Gebrselassie,ETH,28/09/2008,Valid,7439.0,2008
+02:03:38,Patrick Makau,KEN,25/09/2011,Valid,7418.0,2011
+02:03:23,Wilson Kipsang,KEN,29/09/2013,Valid,7403.0,2013
+02:02:57,Dennis Kimetto,KEN,28/09/2014,Valid,7377.0,2014
+02:01:39,Eliud Kipchoge,KEN,16/09/2018,Valid (Super Shoe Era Begins),7299.0,2018
+02:01:09,Eliud Kipchoge,KEN,25/09/2022,Valid,7269.0,2022
+02:00:35,Kelvin Kiptum,KEN,08/10/2023,Valid,7235.0,2023

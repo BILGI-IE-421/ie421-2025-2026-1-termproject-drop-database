@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Asymptote of Olympic Glory</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #e94560;
+            --text-color: #eee;
+            --light-bg: #0f3460;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-color);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(233, 69, 96, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('olimpiyat_1.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.15) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 0.4; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--gold), var(--accent-color), var(--gold));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease, shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero .authors {
+            font-size: 1rem;
+            color: var(--bronze);
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            font-size: 2rem;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Background images for sections */
+        #rq1 {
+            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.85)), url('Olimpiyat2.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .section-header .question {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            color: var(--silver);
+            line-height: 1.8;
+        }
+
+        /* Story Cards with better narrative flow */
+        .story-block {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .story-block:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(233, 69, 96, 0.4);
+            border-color: var(--gold);
+        }
+
+        .story-block h3 {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .story-block p {
+            font-size: 1.15rem;
+            line-height: 2;
+            margin-bottom: 1rem;
+        }
+
+        .story-block strong {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .story-block em {
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        /* Pull quote style for dramatic statements */
+        .pull-quote {
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.2) 0%, rgba(15, 52, 96, 0.2) 100%);
+            border-left: 5px solid var(--accent-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .pull-quote strong {
+            color: var(--gold);
+            font-size: 1.6rem;
+        }
+
+        .viz-container {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .viz-container h3 {
+            text-align: center;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .viz-container img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .viz-caption {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-style: italic;
+            color: var(--silver);
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--secondary-color) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid var(--accent-color);
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .stat-card:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 15px 50px rgba(233, 69, 96, 0.5);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .findings-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .findings-list li {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .findings-list li:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateX(15px);
+            border-left-color: var(--gold);
+        }
+
+        .findings-list li strong {
+            color: var(--gold);
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th {
+            background: var(--accent-color);
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        td {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.05rem;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .dashboard-embed {
+            width: 100%;
+            height: 600px;
+            border: 3px solid var(--accent-color);
+            border-radius: 15px;
+            margin: 2rem 0;
+            background: white;
+        }
+
+        /* Timeline styling for Age section */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--gold), var(--accent-color));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 2rem;
+            position: relative;
+            width: 50%;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            position: relative;
+            border-radius: 15px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .timeline-content h3 {
+            margin: 1rem 0;
+            font-size: 1.8rem;
+        }
+
+        .timeline-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--light-bg) 100%);
+            padding: 5rem 3rem;
+            border-radius: 25px;
+            text-align: center;
+            margin: 4rem 0;
+            box-shadow: 0 15px 50px rgba(233, 69, 96, 0.3);
+        }
+
+        .conclusion h3 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .conclusion p {
+            font-size: 1.3rem;
+            line-height: 2;
+            max-width: 900px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        footer {
+            background: var(--primary-color);
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+            border-top: 3px solid var(--gold);
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 0 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item.right {
+                left: 0;
+            }
+
+            .story-block {
+                padding: 2rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Methodology section styling */
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .methodology-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .methodology-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+
+        .methodology-card h4 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .methodology-card p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#rq1">RQ1: Biological Limits</a></li>
+            <li><a href="#rq2">RQ2: Cultural DNA</a></li>
+            <li><a href="#rq3">RQ3: Age Evolution</a></li>
+            <li><a href="#methodology">Methodology</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>🍸 The Asymptote of Olympic Glory</h1>
+            <p class="subtitle">Statistical Modeling of Olympic Performance Limits<br>and the Analysis of Cultural Structural Breaks</p>
+            <p class="authors">Team Drop-Database<br>
+                Yiğit Şamil Ercedoğan • Batuhan Sarı • İlhan Uysal<br>
+                Ali Baran Turan • Efe Odabaşı
+            </p>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- PART I: THE WIDE GLASS (Hook + Universal Curiosity) -->
+    <section id="rq1" class="fade-in">
+        <div class="section-header">
+            <h2>PART I — THE WIDE GLASS</h2>
+            <p class="question">Research Question 1: The Biological Limits of Human Performance</p>
+            <p>Does the progression of Olympic records follow linear improvement, or are we witnessing the "Law of Diminishing Returns" as humanity converges towards a mathematical asymptote?</p>
+        </div>
+
+        <div class="story-block">
+            <h3>The Question That Haunts Every Record</h3>
+            <p>Every four years, the world watches as athletes push beyond what we thought possible. <strong>Usain Bolt's 9.58 seconds</strong>. <strong>Eliud Kipchoge's sub-2-hour marathon</strong>. <strong>Javier Sotomayor's 2.45-meter high jump</strong>. Each performance begs the question: <em>How much faster? How much higher? How much longer can this go on?</em></p>
+            
+            <div class="pull-quote">
+                <p>The Limit Theory proposes a provocative answer: <strong>Not much longer.</strong></p>
+            </div>
+
+            <p>This isn't pessimism—it's physics. It's biology. It's mathematics. Our analysis of 120 years of Olympic data reveals that human athletic performance isn't climbing a ladder to infinity. Instead, it's following a predictable <strong>S-curve</strong>, asymptotically approaching a ceiling defined by the fundamental constraints of human physiology.</p>
+            
+            <p>This research begins from a simple but powerful idea: what looks like continuous progress may actually be <em>convergence toward a hard biological wall</em>.</p>
+        </div>
+
+        <!-- PART II: THE STEM (Deep Analytical Core) -->
+        <div class="story-block">
+            <h3>The Mathematical Fingerprint of Biological Limits</h3>
+            <p>When Olympic performance is plotted across time, a striking structure emerges. Rather than linear progress, every major sport shows <strong>saturation behavior</strong>. To unify different disciplines under one comparable framework, we construct the <strong>Performance Saturation Index (PSI)</strong>:</p>
+            
+            <div class="pull-quote">
+                <p><strong>PSI = (Initial Performance - Current Performance) / (Initial Performance - Predicted Limit) × 100%</strong></p>
+            </div>
+
+            <p>This metric allows us to interpret improvement as distance traveled toward a biological endpoint.</p>
+            
+            <p>PSI stages reveal the lifecycle of human performance:</p>
+            <ul class="findings-list">
+                <li><strong>0%</strong> → exploration era</li>
+                <li><strong>50%</strong> → structured optimization</li>
+                <li><strong>90%+</strong> → saturation and marginal struggle</li>
+                <li><strong>100%</strong> → theoretical biological boundary</li>
+            </ul>
+            
+            <p>The shape is not accidental. It is the mathematical signature of systems constrained by natural limits.</p>
+        </div>
+
+        <div class="viz-container">
+            <h3>The Mathematical Fingerprint: Performance Convergence</h3>
+            <img src="ols_performance_analysis.png" alt="OLS Log-Linear Regression" onerror="this.src='https://via.placeholder.com/1200x600/1a1a2e/ffd700?text=OLS+Performance+Analysis'">
+            <p class="viz-caption">Figure 1: OLS Log-Linear Regression reveals logarithmic performance curves. The flattening curves indicate approaching biological limits.</p>
+        </div>
+
+        <div class="story-block">
+            <h3>The Evidence: Three Sports, One Destiny</h3>
+            
+            <p><strong>100m Sprint (R² = 0.81)</strong><br>
+            Predicted asymptote ~9.48s<br>
+            Current WR 9.58<br>
+            PSI ~92%<br>
+            Only 0.03s gained since 2000</p>
+            
+            <p>The sprint is now in its <em>terminal optimization phase</em>. Each centisecond requires exponentially more physiological efficiency.</p>
+            
+            <p><strong>Marathon (R² = 0.93)</strong><br>
+            Predicted limit ~2.01h<br>
+            PSI ~88%<br>
+            4.2 minutes improvement over 24 years</p>
+            
+            <p>Marathon shows the strongest biological ceiling behavior — driven by VO₂ max, glycogen capacity and lactate constraints.</p>
+            
+            <p><strong>High Jump (R² = 0.61)</strong><br>
+            Predicted limit ~2.48m<br>
+            PSI ~85%<br>
+            Record nearly frozen since Fosbury-era breakthrough</p>
+            
+            <p>Technological shifts created step-changes, but biology reasserted dominance.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">98.9%</div>
+                <div class="stat-label">100m Sprint<br>Biological Limit Achieved</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98.8%</div>
+                <div class="stat-label">Marathon<br>Biological Limit Achieved</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98.8%</div>
+                <div class="stat-label">High Jump<br>Biological Limit Achieved</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">R² = 0.93</div>
+                <div class="stat-label">Marathon Model<br>Statistical Fit Quality</div>
+            </div>
+        </div>
+
+        <div class="story-block">
+            <h3>The Law of Diminishing Returns</h3>
+            <p>Decadal slopes collapse dramatically:</p>
+            <p>From <strong>large leaps</strong> → to <strong>fractional gains</strong> → to <strong>statistical noise</strong>.</p>
+            
+            <div class="pull-quote">
+                <p>The derivative of improvement is approaching zero. This is textbook asymptotic saturation.</p>
+            </div>
+        </div>
+
+        <div class="story-block">
+            <h3>Variance Convergence: Proof of a Ceiling</h3>
+            <p>Early Olympics showed chaotic spread in results. Today finalists cluster tightly. Extreme Value Theory predicts exactly this behavior when a population nears its maximum capability.</p>
+            
+            <p><em>When variance disappears, limits become visible.</em></p>
+        </div>
+
+        <div class="story-block">
+            <h3>Predicted Biological Limits</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sport</th>
+                        <th>Predicted Limit</th>
+                        <th>Current WR</th>
+                        <th>Gap Remaining</th>
+                        <th>% Saturation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>100m Sprint</strong></td>
+                        <td>9.48s</td>
+                        <td>9.58s</td>
+                        <td>0.10s</td>
+                        <td>98.9%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marathon</strong></td>
+                        <td>2:00:36</td>
+                        <td>2:02:06</td>
+                        <td>1:30</td>
+                        <td>98.8%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High Jump</strong></td>
+                        <td>2.48m</td>
+                        <td>2.45m</td>
+                        <td>3cm</td>
+                        <td>98.8%</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="pull-quote">
+                <p>The conclusion is not symbolic — it is <strong>quantitative</strong>. Humanity has already reached <strong>~99% of biological capacity</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PART III: THE GLASS OPENS AGAIN (Meaning + Cultural Bridge) -->
+    <section id="rq2" class="fade-in">
+        <div class="section-header">
+            <h2>PART III — THE GLASS OPENS AGAIN</h2>
+            <p class="question">Research Question 2: The Cultural DNA of Olympic Glory</p>
+            <p>If biological limits are universal, why do some nations consistently dominate? The answer lies not in their bodies, but in their <strong>culture</strong>.</p>
+        </div>
+
+        <div class="story-block">
+            <h3>Cultural Paradox: The Last 1%</h3>
+            <p>Biology sets the ceiling, culture determines who reaches it. Individualism shows a <strong>28x medal advantage</strong> despite identical human limits.</p>
+            
+            <div class="pull-quote">
+                <p>The last 1% is <strong>psychological, institutional and cultural</strong>.</p>
+            </div>
+        </div>
+
+        <div class="story-block">
+            <h3>The Illusion of Success</h3>
+            <p>We assume: <strong>Biology + Money = Gold</strong>. But our data tells a different story.</p>
+            <p>The answer is in their minds, not their muscles.</p>
+        </div>
+
+        <div class="viz-container">
+            <h3>The Cultural Trend: From Collectivism to Individualism</h3>
+            <img src="visual_quartile_trend.png" alt="Cultural Trend" onerror="this.src='https://via.placeholder.com/1200x600/1a1a2e/ffd700?text=Cultural+Quartile+Trend'">
+            <p class="viz-caption">Figure 2: From Collectivist to Individualist cultures, average medal count jumps from 107 to 577—a 5.4x multiplier.</p>
+        </div>
+
+        <div class="story-block" style="background: linear-gradient(135deg, rgba(233, 69, 96, 0.2) 0%, rgba(15, 52, 96, 0.3) 100%);">
+            <h3>The 28x Gap</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 2rem 0;">
+                <div style="text-align: center; padding: 2rem; background: rgba(255, 215, 0, 0.1); border-radius: 15px;">
+                    <div style="font-size: 4rem; font-weight: bold; color: var(--gold);">1,251</div>
+                    <div style="font-size: 1.3rem; margin-top: 1rem;">Top 5 Individualist Nations</div>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: rgba(192, 192, 192, 0.1); border-radius: 15px;">
+                    <div style="font-size: 4rem; font-weight: bold; color: var(--silver);">44</div>
+                    <div style="font-size: 1.3rem; margin-top: 1rem;">Top 5 Collectivist Nations</div>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 1.5rem; margin-top: 2rem;">A <strong style="color: var(--gold);">28-fold difference</strong>—despite identical biological limits.</p>
+        </div>
+
+        <div class="story-block">
+            <h3>The Signal in the Noise</h3>
+            <div style="text-align: center; margin: 2rem 0; padding: 3rem; background: rgba(255, 215, 0, 0.15); border-radius: 15px; border: 2px solid var(--gold);">
+                <div style="font-size: 2.5rem; color: var(--gold); font-weight: bold;">r = +0.437, p < 0.001</div>
+                <div style="margin-top: 1.5rem; font-size: 1.4rem;">Individualism ↔ Medal Count</div>
+                <p style="margin-top: 1rem; font-size: 1.1rem; color: var(--silver);">A statistically significant relationship that explains Olympic dominance</p>
+            </div>
+        </div>
+
+        <div class="viz-container">
+            <h3>Interactive Dashboard: Explore the Data Yourself</h3>
+            <iframe class="dashboard-embed" src="visual_interactive_dashboard.html"></iframe>
+            <p class="viz-caption">Figure 3: Explore the relationship between individualism and Olympic success</p>
+        </div>
+
+        <div class="story-block">
+            <h3>What Happens at the Asymptote?</h3>
+            <p>Future competition shifts from physiology → to:</p>
+            <ul class="findings-list">
+                <li><strong>Technology:</strong> Equipment, training methods, data analytics</li>
+                <li><strong>Specialization Culture:</strong> Early identification, focused development</li>
+                <li><strong>Definition of Fairness:</strong> What enhancements are "natural"?</li>
+            </ul>
+        </div>
+
+        <div class="story-block">
+            <h3>Statistical Verdict</h3>
+            <p>All evidence confirms the Limit Theory.</p>
+            <div class="pull-quote">
+                <p>Human performance is no longer climbing — it is <strong>converging</strong>.</p>
+            </div>
+        </div>
+
+        <div class="story-block">
+            <h3>The Beautiful Tragedy</h3>
+            <p>Records now represent proximity to perfection, not raw improvement. The Olympics are transitioning from human expansion to human refinement.</p>
+            <p style="margin-top: 1rem; font-style: italic; color: var(--accent-color);">We are witnessing the end of the beginning, and the beginning of the end.</p>
+        </div>
+    </section>
+
+    <!-- Age Evolution Section -->
+    <section id="rq3" class="fade-in">
+        <div class="section-header">
+            <h2>Research Question 3</h2>
+            <p class="question">The Age Paradox: Evolution of the Elite Athlete</p>
+            <p>For decades, we believed sports were becoming a young person's game. The data proves otherwise.</p>
+        </div>
+
+        <div class="story-block">
+            <h3>Age Structure of Olympic Medalists</h3>
+            <p>Now we zoom back out to another biological frontier: <strong>age</strong>.</p>
+            <ul class="findings-list">
+                <li><strong>1900–1950</strong> → fluctuations from structural instability</li>
+                <li><strong>1950–1980</strong> → younger peaks due to systematized talent pipelines</li>
+                <li><strong>Post-1980</strong> → rising age from longevity, medicine, and experience premium</li>
+            </ul>
+            <p>The evolution of age mirrors the evolution of performance: from volatility → to optimization → to endurance dominance.</p>
+        </div>
+
+        <div class="viz-container">
+            <h3>The U-Turn of History</h3>
+            <img src="mean_age_trend_graph.png" alt="Mean Athlete Age Trend" onerror="this.src='https://via.placeholder.com/1200x600/1a1a2e/ffd700?text=Mean+Age+Trend+1900-2020'">
+            <p class="viz-caption">Figure 4: The trend reveals three distinct eras. Notice the sharp decline post-WWII and the steady climb after 1980.</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <span style="font-size: 0.9rem; color: var(--silver); letter-spacing: 1px; text-transform: uppercase;">Era I: 1900–1950</span>
+                    <h3 style="color: var(--accent-color);">The Era of Turbulence</h3>
+                    <p>Mean age fluctuated wildly, driven by the chaos of global wars and inconsistent athlete pools.</p>
+                    <strong style="display:block; margin-top:1rem; color: var(--gold);">Driver: World Wars & Disruptions</strong>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <span style="font-size: 0.9rem; color: var(--silver); letter-spacing: 1px; text-transform: uppercase;">Era II: 1950–1980</span>
+                    <h3 style="color: var(--accent-color);">The Search for Youth</h3>
+                    <p>A sharp decline in age. Nations built centralized systems to identify and specialize talent earlier than ever.</p>
+                    <strong style="display:block; margin-top:1rem; color: var(--gold);">Driver: Early Specialization</strong>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <span style="font-size: 0.9rem; color: var(--silver); letter-spacing: 1px; text-transform: uppercase;">Era III: 1980–Present</span>
+                    <h3 style="color: var(--accent-color);">The Rise of the Veteran</h3>
+                    <p>The trend reversed. Professionalization and sports medicine now allow athletes to peak later and last longer.</p>
+                    <strong style="display:block; margin-top:1rem; color: var(--gold);">Driver: Career Longevity & Science</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-block">
+            <h3>What This Means</h3>
+            <div class="pull-quote">
+                <p>"We are not just seeing better athletes; we are seeing <em>older</em> athletes acting younger."</p>
+            </div>
+            <ul class="findings-list">
+                <li><strong>Professionalization Effect:</strong> Athletes can now make a living, extending careers well into their 30s.</li>
+                <li><strong>Medical Revolution:</strong> Recovery technologies have pushed the biological retirement age backward.</li>
+                <li><strong>Program Composition:</strong> The addition of strategy-heavy sports aids this age increase.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="fade-in">
+        <div class="section-header">
+            <h2>Methodology</h2>
+            <p>How We Built the Mathematical Model of Olympic Glory</p>
+        </div>
+
+        <div class="methodology-grid">
+            <div class="methodology-card">
+                <h4>📊 Data Sources</h4>
+                <p>120 years of Olympic records (1896-2020) analyzed across multiple sports disciplines including track & field, swimming, and gymnastics.</p>
+            </div>
+
+            <div class="methodology-card">
+                <h4>📈 Statistical Models</h4>
+                <p>OLS Log-Linear Regression, Extreme Value Theory (EVT), and Performance Saturation Index (PSI) calculations to model biological limits.</p>
+            </div>
+
+            <div class="methodology-card">
+                <h4>🌍 Cultural Analysis</h4>
+                <p>Hofstede's Individualism Index correlated with medal counts, controlling for GDP and population variables.</p>
+            </div>
+
+            <div class="methodology-card">
+                <h4>📉 Time Series Analysis</h4>
+                <p>Decade-wise performance slopes and variance convergence analyzed to detect saturation patterns.</p>
+            </div>
+
+            <div class="methodology-card">
+                <h4>🔬 Validation</h4>
+                <p>Cross-validation with R² values ranging from 0.61-0.93 confirms model robustness across sports.</p>
+            </div>
+
+            <div class="methodology-card">
+                <h4>⚡ Breakpoint Detection</h4>
+                <p>Chow tests and structural break analysis identified key historical transitions in athlete age distributions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion" class="fade-in">
+        <div class="conclusion">
+            <h3>🍸 The Martini Glass Complete</h3>
+            <p>We opened with a question that haunts every record. We descended through the mathematical proof of biological limits. We emerged into the cultural paradox that determines who reaches those limits.</p>
+            
+            <p style="font-size: 1.5rem; margin: 2rem 0; color: var(--gold);"><strong>The verdict is clear:</strong></p>
+            
+            <ul class="findings-list" style="text-align: left; max-width: 800px; margin: 2rem auto;">
+                <li><strong>Human performance has reached ~99% of biological capacity</strong></li>
+                <li><strong>Culture, not biology, now determines Olympic dominance</strong></li>
+                <li><strong>The age of athletes is rising as medicine extends careers</strong></li>
+                <li><strong>Future records will be measured in millimeters and milliseconds</strong></li>
+            </ul>
+
+            <div class="pull-quote" style="background: rgba(255,255,255,0.1); margin: 3rem 0;">
+                <p>This is no longer a story of human expansion.<br>It is a story of human <strong>convergence</strong>.<br><br>
+                We are approaching <em>asymptote</em>.</p>
+            </div>
+
+            <p style="font-size: 1.2rem; margin-top: 2rem;">The Olympics have entered a new era: not the pursuit of the impossible, but the <strong>perfection of the possible</strong>.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p style="font-size: 1.5rem; margin-bottom: 1rem;">🏅 The Asymptote of Olympic Glory</p>
+        <p style="font-size: 1.1rem;">Team Drop-Database | 2024</p>
+        <p style="margin-top: 0.5rem;">Yiğit Şamil Ercedoğan • Batuhan Sarı • İlhan Uysal • Ali Baran Turan • Efe Odabaşı</p>
+        <p style="margin-top: 2rem;"><a href="https://bilgi-ie-421.github.io/ie421-2025-2026-1-termproject-drop-database/" target="_blank">📂 View on GitHub</a></p>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Add active state to nav links based on scroll position
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+Time,Wind,Athlete,Nationality,Date,Timing,Notes,Time_seconds,Year
+10.6,0.0,Donald Lippincott,USA,06/07/1912,Hand,Valid,10.6,1912
+10.6,0.0,Jackson Scholz,USA,16/09/1920,Hand,Valid,10.6,1920
+10.4,0.0,Charley Paddock,USA,23/04/1921,Hand,Valid,10.4,1921
+10.4,0.0,Eddie Tolan,USA,08/08/1929,Hand,Valid,10.4,1929
+10.4,0.0,Eddie Tolan,USA,25/08/1929,Hand,Valid,10.4,1929
+10.3,0.0,Percy Williams,CAN,09/08/1930,Hand,Valid,10.3,1930
+10.3,0.4,Eddie Tolan,USA,01/08/1932,Hand,Valid,10.3,1932
+10.3,0.0,Ralph Metcalfe,USA,12/08/1933,Hand,Valid,10.3,1933
+10.3,0.0,Eulace Peacock,USA,06/08/1934,Hand,Valid,10.3,1934
+10.3,0.0,Chris Berger,NED,26/08/1934,Hand,Valid,10.3,1934
+10.3,0.0,Ralph Metcalfe,USA,15/09/1934,Hand,Valid,10.3,1934
+10.3,2.0,Ralph Metcalfe,USA,23/09/1934,Hand,Valid,10.3,1934
+10.3,2.5,Takayoshi Yoshioka,JPN,15/06/1935,Hand,Valid (Wind Aided?),10.3,1935
+10.2,1.2,Jesse Owens,USA,20/06/1936,Hand,Valid,10.2,1936
+10.3,0.5,Lennart Strandberg,SWE,26/09/1936,Hand,Rescinded (Ratified then cancelled),10.3,1936
+10.2,-0.9,Harold Davis,USA,06/06/1941,Hand,Valid,10.2,1941
+10.2,0.7,Lloyd LaBeach,PAN,15/05/1948,Hand,Valid,10.2,1948
+10.2,0.0,Barney Ewell,USA,09/07/1948,Hand,Valid,10.2,1948
+10.2,0.0,McDonald Bailey,GBR,25/08/1951,Hand,Valid,10.2,1951
+10.2,1.1,Heinz Fütterer,FRG,31/10/1954,Hand,Valid,10.2,1954
+10.2,0.9,Bobby Morrow,USA,19/05/1956,Hand,Valid,10.2,1956
+10.2,-1.0,Ira Murchison,USA,01/06/1956,Hand,Valid,10.2,1956
+10.2,0.0,Bobby Morrow,USA,22/06/1956,Hand,Valid,10.2,1956
+10.2,-1.3,Ira Murchison,USA,29/06/1956,Hand,Valid,10.2,1956
+10.2,-0.4,Bobby Morrow,USA,29/06/1956,Hand,Valid,10.2,1956
+10.1,0.7,Willie Williams,USA,03/08/1956,Hand,Valid,10.1,1956
+10.1,1.0,Ira Murchison,USA,04/08/1956,Hand,Valid,10.1,1956
+10.1,1.5,Leamon King,USA,20/10/1956,Hand,Valid,10.1,1956
+10.1,0.9,Leamon King,USA,27/10/1956,Hand,Valid,10.1,1956
+10.1,1.3,Ray Norton,USA,18/04/1959,Hand,Valid,10.1,1959
+10.0,0.9,Armin Hary,FRG,21/06/1960,Hand,Valid,10.0,1960
+10.0,1.8,Harry Jerome,CAN,15/07/1960,Hand,Valid,10.0,1960
+10.0,0.0,Horacio Esteves,VEN,15/08/1964,Hand,Valid,10.0,1964
+10.06,1.3,Bob Hayes,USA,15/10/1964,Auto,Valid,10.06,1964
+10.0,1.3,Bob Hayes,USA,15/10/1964,Hand,Valid (Auto: 10.06),10.0,1964
+10.0,2.0,Jim Hines,USA,27/05/1967,Hand,Valid (Auto: 10.17),10.0,1967
+10.0,1.8,Enrique Figuerola,CUB,17/06/1967,Hand,Valid,10.0,1967
+10.0,0.0,Paul Nash,RSA,02/04/1968,Hand,Valid,10.0,1968
+10.0,1.1,Oliver Ford,USA,31/05/1968,Hand,Valid,10.0,1968
+10.03,0.8,Jim Hines,USA,20/06/1968,Auto,Valid,10.03,1968
+10.0,2.0,Charles Greene,USA,20/06/1968,Hand,Valid (Auto: 10.20),10.0,1968
+10.0,2.0,Roger Bambuck,FRA,20/06/1968,Hand,Valid (Auto: 10.28),10.0,1968
+9.9,0.8,Jim Hines,USA,20/06/1968,Hand,Valid (Auto: 10.03),9.9,1968
+9.9,0.8,Ronnie Ray Smith,USA,20/06/1968,Hand,Valid (Auto: 10.14),9.9,1968
+9.9,0.9,Charles Greene,USA,20/06/1968,Hand,Valid (Auto: 10.10),9.9,1968
+10.02,2.0,Charles Greene,USA,13/10/1968,Auto,Valid,10.02,1968
+9.95,0.3,Jim Hines,USA,14/10/1968,Auto,Valid (First Major Electronic Record),9.95,1968
+9.9,0.0,Eddie Hart,USA,01/07/1972,Hand,Valid,9.9,1972
+9.9,0.0,Rey Robinson,USA,01/07/1972,Hand,Valid,9.9,1972
+9.9,1.3,Steve Williams,USA,21/06/1974,Hand,Valid,9.9,1974
+9.9,1.7,Silvio Leonard,CUB,05/06/1975,Hand,Valid,9.9,1975
+9.9,0.0,Steve Williams,USA,16/07/1975,Hand,Valid,9.9,1975
+9.9,-0.2,Steve Williams,USA,22/08/1975,Hand,Valid,9.9,1975
+9.9,0.7,Steve Williams,USA,27/03/1976,Hand,Valid,9.9,1976
+9.9,0.7,Harvey Glance,USA,03/04/1976,Hand,Valid,9.9,1976
+9.9,0.0,Harvey Glance,USA,01/05/1976,Hand,Valid,9.9,1976
+9.9,1.7,Don Quarrie,JAM,22/05/1976,Hand,Valid,9.9,1976
+9.93,1.4,Calvin Smith,USA,03/07/1983,Auto,Valid,9.93,1983
+9.93,1.0,Carl Lewis,USA,30/08/1987,Auto,Valid,9.93,1987
+9.83,1.0,Ben Johnson,CAN,30/08/1987,Auto,Rescinded (Doping),9.83,1987
+9.93,1.1,Carl Lewis,USA,17/08/1988,Auto,Valid,9.93,1988
+9.92,1.1,Carl Lewis,USA,24/09/1988,Auto,Valid,9.92,1988
+9.79,1.1,Ben Johnson,CAN,24/09/1988,Auto,Rescinded (Doping),9.79,1988
+9.9,1.9,Leroy Burrell,USA,14/06/1991,Auto,Valid,9.9,1991
+9.86,1.2,Carl Lewis,USA,25/08/1991,Auto,Valid,9.86,1991
+9.85,1.2,Leroy Burrell,USA,06/07/1994,Auto,Valid,9.85,1994
+9.84,0.7,Donovan Bailey,CAN,27/07/1996,Auto,Valid,9.84,1996
+9.79,0.1,Maurice Greene,USA,16/06/1999,Auto,Valid,9.79,1999
+9.78,2.0,Tim Montgomery,USA,14/09/2002,Auto,Rescinded (Doping),9.78,2002
+9.77,1.6,Asafa Powell,JAM,14/06/2005,Auto,Valid,9.77,2005
+9.77,1.7,Justin Gatlin,USA,12/05/2006,Auto,Rescinded (Doping),9.77,2006
+9.77,1.5,Asafa Powell,JAM,11/06/2006,Auto,Valid,9.77,2006
+9.77,1.0,Asafa Powell,JAM,18/08/2006,Auto,Valid,9.77,2006
+9.74,1.7,Asafa Powell,JAM,09/09/2007,Auto,Valid,9.74,2007
+9.72,1.7,Usain Bolt,JAM,31/05/2008,Auto,Valid,9.72,2008
+9.69,0.0,Usain Bolt,JAM,16/08/2008,Auto,Valid,9.69,2008
+9.58,0.9,Usain Bolt,JAM,16/08/2009,Auto,Valid,9.58,2009
