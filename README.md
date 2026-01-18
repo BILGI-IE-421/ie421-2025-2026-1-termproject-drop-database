@@ -6,7 +6,8 @@ The project reveals that human performance has reached approximately 99% of biol
 Term: 2025-2026 Fall Semester
 
 NAME: Ali Baran Turan -- Batuhan Sarı -- Efe Odabaşı -- İlhan Uysal -- Yiğit Şamil Ercedoğan
-ID:         120203025 --    122203053 --   121203041 --   122203016 --             121203076  
+
+  ID:       120203025 --    122203053 --   121203041 --   122203016 --             121203076  
 
 Files
 
