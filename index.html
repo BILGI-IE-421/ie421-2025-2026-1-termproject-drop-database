@@ -77,7 +77,7 @@
             padding: 2rem;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('visuals/olimpiyat_1.jpeg');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('olimpiyat_1.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -168,12 +168,8 @@
             position: relative;
         }
 
-        /* Background images for sections */
         #rq1 {
-            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.85)), url('visuals/Olimpiyat2.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         }
 
         .section-header {
@@ -205,7 +201,6 @@
             line-height: 1.8;
         }
 
-        /* Story Cards with better narrative flow */
         .story-block {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(15px);
@@ -246,7 +241,6 @@
             font-style: italic;
         }
 
-        /* Pull quote style for dramatic statements */
         .pull-quote {
             background: linear-gradient(135deg, rgba(233, 69, 96, 0.2) 0%, rgba(15, 52, 96, 0.2) 100%);
             border-left: 5px solid var(--accent-color);
@@ -344,11 +338,6 @@
             border-radius: 10px;
             transition: all 0.3s ease;
             font-size: 1.1rem;
-
-            /* ADD THESE */
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
 
         .findings-list li:hover {
@@ -360,8 +349,6 @@
         .findings-list li strong {
             color: var(--gold);
             font-size: 1.3rem;
-            display: inline;     /* CHANGE THIS */
-            margin-bottom: 0;    /* CHANGE THIS */
         }
 
         table {
@@ -401,7 +388,6 @@
             background: white;
         }
 
-        /* Timeline styling for Age section */
         .timeline {
             position: relative;
             max-width: 1200px;
@@ -551,7 +537,6 @@
             transform: translateY(0);
         }
 
-        /* Methodology section styling */
         .methodology-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -597,6 +582,15 @@
         </ul>
     </nav>
 
+    <!-- Olympic Banner -->
+    <div style="width: 100%; height: 200px; overflow: hidden; position: relative; margin-top: 60px;">
+        <img src="Olimpiyat2.jpeg" alt="Olympic History Banner" 
+             style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
+                    background: linear-gradient(90deg, rgba(26,26,46,0.7) 0%, rgba(26,26,46,0.3) 50%, rgba(26,26,46,0.7) 100%);">
+        </div>
+    </div>
+
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>🍸 The Asymptote of Olympic Glory</h1>
@@ -609,7 +603,6 @@
         <div class="scroll-indicator">↓</div>
     </section>
 
-    <!-- PART I: THE WIDE GLASS (Hook + Universal Curiosity) -->
     <section id="rq1" class="fade-in">
         <div class="section-header">
             <h2>PART I — THE WIDE GLASS</h2>
@@ -630,7 +623,6 @@
             <p>This research begins from a simple but powerful idea: what looks like continuous progress may actually be <em>convergence toward a hard biological wall</em>.</p>
         </div>
 
-        <!-- PART II: THE STEM (Deep Analytical Core) -->
         <div class="story-block">
             <h3>The Mathematical Representation of Biological Limits</h3>
             <p>When Olympic performance is plotted across time, a striking structure emerges. Rather than linear progress, every major sport shows <strong>saturation behavior</strong>. To unify different disciplines under one comparable framework, we construct the <strong>Performance Saturation Index (PSI)</strong>:</p>
@@ -654,7 +646,7 @@
 
         <div class="viz-container">
             <h3>The Mathematical Fingerprint: Performance Convergence</h3>
-            <img src="visuals/ols_performance_analysis.png" alt="OLS Log-Linear Regression" onerror="this.src='https://via.placeholder.com/1200x600/1a1a2e/ffd700?text=OLS+Performance+Analysis'">
+            <img src="visuals/ols_performance_analysis.png" alt="OLS Log-Linear Regression">
             <p class="viz-caption">Figure 1: OLS Log-Linear Regression reveals logarithmic performance curves. The flattening curves indicate approaching biological limits.</p>
         </div>
 
@@ -763,7 +755,6 @@
         </div>
     </section>
 
-    <!-- PART III: THE GLASS OPENS AGAIN (Meaning + Cultural Bridge) -->
     <section id="rq2" class="fade-in">
         <div class="section-header">
             <h2>PART III — THE GLASS OPENS AGAIN</h2>
@@ -788,7 +779,7 @@
 
         <div class="viz-container">
             <h3>The Cultural Trend: From Collectivism to Individualism</h3>
-            <img src="visuals/visual_quartile_trend.png" alt="Cultural Trend" onerror="this.src='https://via.placeholder.com/1200x600/1a1a2e/ffd700?text=Cultural+Quartile+Trend'">
+            <img src="visuals/visual_quartile_trend.png" alt="Cultural Trend">
             <p class="viz-caption">Figure 2: From Collectivist to Individualist cultures, average medal count jumps from 107 to 577—a 5.4x multiplier.</p>
         </div>
 
@@ -847,7 +838,6 @@
         </div>
     </section>
 
-    <!-- Age Evolution Section -->
     <section id="rq3" class="fade-in">
         <div class="section-header">
             <h2>Research Question 3</h2>
@@ -868,7 +858,7 @@
 
         <div class="viz-container">
             <h3>The U-Turn of History</h3>
-            <img src="visuals/mean_age_trend_graph.png" alt="Mean Athlete Age Trend" onerror="this.src='https://via.placeholder.com/1200x600/1a1a2e/ffd700?text=Mean+Age+Trend+1900-2020'">
+            <img src="visuals/mean_age_trend_graph.png" alt="Mean Athlete Age Trend">
             <p class="viz-caption">Figure 4: The trend reveals three distinct eras. Notice the sharp decline post-WWII and the steady climb after 1980.</p>
         </div>
 
@@ -914,7 +904,6 @@
         </div>
     </section>
 
-    <!-- Methodology Section -->
     <section id="methodology" class="fade-in">
         <div class="section-header">
             <h2>Methodology</h2>
@@ -954,25 +943,31 @@
         </div>
     </section>
 
-    <!-- Conclusion -->
     <section id="conclusion" class="fade-in">
         <div class="conclusion">
-            <h3>🍸 The Martini Glass Complete</h3>
+            <h3>The Asymptote Has Been Reached</h3>
             <p>We opened with a question that haunts every record. We descended through the mathematical proof of biological limits. We emerged into the cultural paradox that determines who reaches those limits.</p>
             
-            <ul class="findings-list" style="text-align: left; max-width: 800px; margin: 2rem auto;">
-                <li><strong>Human performance has reached ~99% of biological capacity</strong></li>
-                <li><strong>Culture, not biology, now determines Olympic dominance</strong></li>
-                <li><strong>The age of athletes is rising as medicine extends careers</strong></li>
-                <li><strong>Future records will be measured in millimeters and milliseconds</strong></li>
+            <p style="font-size: 1.6rem; margin: 2rem 0; color: var(--gold);"><strong>Three Discoveries That Redefined Olympic Glory:</strong></p>
+            
+            <ul class="findings-list" style="text-align: left; max-width: 900px; margin: 2rem auto;">
+                <li><strong>RQ1: Biological Asymptote</strong> — Humanity has exhausted 98.9% of sprint capacity, 98.8% of marathon potential, and 98.8% of vertical jumping ability. The S-curve has flattened.</li>
+                <li><strong>RQ2: Cultural Supremacy</strong> — Individualist nations achieve 28× more medals than collectivist cultures (r = +0.437, p < 0.001). The last 1% is psychological.</li>
+                <li><strong>RQ3: Age Reversal</strong> — After declining for 30 years (1950–1980), athlete age is now rising due to professionalization and sports medicine, defying the youth paradigm.</li>
             </ul>
 
-            <div class="pull-quote" style="background: rgba(255,255,255,0.1); margin: 3rem 0;">
-                <p>This is no longer a story of human expansion.<br>It is a story of human <strong>convergence</strong>.<br><br>
-                We are approaching <em>asymptote</em>.</p>
+            <div class="pull-quote" style="background: rgba(255,215,0,0.1); margin: 3rem 0; border: 3px solid var(--gold);">
+                <p style="font-size: 1.8rem; color: var(--gold);">
+                    "From the ancient stadiums of Olympia to the data-driven analytics of 2024, <br>
+                    one truth emerged: <strong>human limits are mathematical, <br>
+                    but human will is cultural.</strong>"
+                </p>
             </div>
 
-            <p style="font-size: 1.2rem; margin-top: 2rem;">The Olympics have entered a new era: not the pursuit of the impossible, but the <strong>perfection of the possible</strong>.</p>
+            <p style="font-size: 1.2rem; margin-top: 2rem; font-style: italic; color: var(--silver);">
+                The next Olympic records won't come from breaking the asymptote. <br>
+                They will come from the nations who understand that <strong style="color: var(--gold);">culture is the final performance enhancer</strong>.
+            </p>
         </div>
     </section>
 
@@ -984,7 +979,6 @@
     </footer>
 
     <script>
-        // Intersection Observer for fade-in animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -998,7 +992,6 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Smooth scroll for navigation
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1010,7 +1003,6 @@
             });
         });
 
-        // Add active state to nav links based on scroll position
         window.addEventListener('scroll', () => {
             let current = '';
             const sections = document.querySelectorAll('section');
